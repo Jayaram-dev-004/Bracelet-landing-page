@@ -1,0 +1,173 @@
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff7e6;
+}
+
+.page-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, #ff7d2c ,#ffae2c, #ff7d2c );
+  color: #ffffff;
+  text-align: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 223, 186, 0.5),
+    rgba(255, 138, 101, 0.8),
+    rgba(255, 87, 34, 1)
+  );
+  border-radius: 4rem 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.bracelet-image {
+  max-width: 80%;
+  height: auto;
+  border-radius: 4rem 10rem;
+  z-index: 1;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+  transform: scale(0.9);
+  animation: zoomIn 2s ease-out forwards;
+}
+
+.headline {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 3rem 0 1rem 0;
+  color: #ff5a2c;
+  animation: slideInText 1.5s ease-out;
+}
+
+.cta-button {
+  margin-top: 1.5rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background: linear-gradient(to bottom right, #ff7d2c ,#ffae2c, #ff7d2c );
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  opacity: 0;
+  animation: fadeInButton 2s ease 0s forwards; 
+}
+
+.cta-button:hover {
+  background-color: #ef6c00;
+  transform: scale(1.05);
+}
+
+.cta-button:active {
+  transform: scale(0.95);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInButton {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInText {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .image-container {
+    width: 250px;
+    height: 250px;
+  }
+  .headline {
+    font-size: 1.8rem;
+  }
+  .cta-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .image-container {
+    width: 200px;
+    height: 200px;
+  }
+  .headline {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .cta-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .image-container {
+    width: 100px;
+    height: 100px;
+  }
+  .headline {
+    font-size: 1rem;
+    margin: 1.5rem 0;
+  }
+  .cta-button {
+    padding: 0.3rem 1rem;
+    font-size: 0.5rem;
+  }
+}
